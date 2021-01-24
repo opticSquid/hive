@@ -10,11 +10,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "concurrently": "^5.3.0",
-    "express": "^4.17.1",
     "mongodb": "^3.6.3",
-    "nodemon": "^2.0.7",
-    "passport": "^0.4.1",
-    "passport-facebook": "^3.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-facebook-login": "^4.1.1",
@@ -47,5 +43,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "proxy": "http://localhost:5000",
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0"
   }
 }
