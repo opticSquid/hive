@@ -11,8 +11,10 @@
     "express": "^4.17.1",
     "mongodb": "^3.6.3",
     "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-facebook-login": "^4.1.1",
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
   },
