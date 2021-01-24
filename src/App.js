@@ -1,9 +1,8 @@
-import Facebook from "./Components/Facebook";
+import FbLogin from "./Components/FbLogin";
 const App = () => {
   return (
     <div className="App">
-      <h1>hello</h1>
-      <Facebook/>
+      <FbLogin/>
     </div>
   );
 }
