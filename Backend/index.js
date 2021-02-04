@@ -3,17 +3,18 @@ const express = require("express");
 const cors = require("cors");
 const https = require("https");
 const fs = require("fs");
+//const mongoose = require('mongoose');
 const path = require("path");
 const certificate = fs.readFileSync(path.join(__dirname + "/../server.cert"),"utf-8",(err,data)=>{if (err) throw err});
 const privateKey = fs.readFileSync(path.join(__dirname + "/../server.key"),"utf-8",(err,data)=>{if (err) throw err});
 //INITIALIZE EXPRESS
 const app = express();
 var corsOption = {
-  origin: "*",
-  optionsSuccessStatus: 200,
+  origin: 3000
 };
+app.use(cors(corsOption));
 //creating endpoints
-app.get("/", cors(corsOption), (req, res) => {
+app.get("/", (req, res) => {
   res.setHeader("Content-Type", "application/json");
   res.status(200).json({ messege: "hello world" });
 });
