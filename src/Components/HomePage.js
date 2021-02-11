@@ -23,6 +23,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
+import Theme from "../Themes/DefaultTheme";
 
 let drawerWidth;
 if (window.innerWidth > 600) {
@@ -32,8 +33,8 @@ if (window.innerWidth > 600) {
 }
 
 const NavBar = (props) => {
-  const classes = useStyles();
   const theme = useTheme();
+  const classes = useStyles();
   //const mobile = useMediaQuery('(max-width:600px)');
   const [open, setOpen] = React.useState(false);
 
@@ -81,7 +82,7 @@ const NavBar = (props) => {
             <Grid item xs={3} className={classes.navIcons}>
               <Link to="/" className={classes.Link}>
                 <IconButton>
-                  <HomeIcon />
+                  <HomeIcon className={classes.ActiveButton} />
                 </IconButton>
               </Link>
             </Grid>
@@ -177,9 +178,7 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
   },
-  Link: {
-    textDecoration: "none",
-  },
+
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: drawerWidth,
@@ -190,6 +189,12 @@ const useStyles = makeStyles((theme) => ({
   },
   navIcons: {
     textAlign: "center",
+  },
+  Link: {
+    textDecoration: "none",
+  },
+  ActiveButton: {
+    color: theme.palette.secondary.main,
   },
   menuButton: {
     marginRight: theme.spacing(2),
