@@ -1,5 +1,6 @@
 //Requiring files for CRUD operations in DB
-var fbUsers = require("./Database/FbUsers");
+let fbUsers = require("./Database/FbUsers");
+let Users = require("./Database/Users");
 const express = require("express");
 //Using CORS to allow development
 const cors = require("cors");
@@ -24,7 +25,7 @@ const privateKey = fs.readFileSync(
 //INITIALIZE EXPRESS
 const app = express();
 var corsOption = {
-  origin: 3000,
+  origin: "https://localhost:3000",
 };
 app.use(cors(corsOption));
 // Connecting DataBase
@@ -40,13 +41,16 @@ MongoClient.connect(
 )
 .then(async client =>{
   await fbUsers.injectDB(client);
+  await Users.injectDB(client);
   // Creating Endpoints
   app.get("/", (req, res) => {
     res.setHeader("Content-Type", "application/json");
     res.status(200).json({ messege: "hello world" });
   });
   //Directing routes to endpoints
-  app.use("/login", require("./Routes/Logins/FbLogin"));
+  app.use("/third-party-login", require("./Routes/Logins/FbLogin"));
+  app.use("/Users/Login",require("./Routes/Login"));
+  app.use("/Users/SignUp",require("./Routes/SignUp"));
   //HTTPS credentials
   const credentials = { key: privateKey, cert: certificate };
   var httpsServer = https.createServer(credentials, app);

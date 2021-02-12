@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Theme from "./Themes/DefaultTheme";
 import HomePage from "./Components/HomePage";
 import HomePageContent from "./Components/HomePageContent";
-import UserHandler from "./Components/UserHandler";
+import SignUp from "./Components/SignUp";
+import Login from "./Components/Login";
 const App = () => {
   return (
     <ThemeProvider theme={Theme}>
@@ -12,7 +13,10 @@ const App = () => {
         <div className="App">
           <Switch>
             <Route path="/LoginSignUp">
-              <UserHandler />
+              <Login />
+            </Route>
+            <Route path="/signUp">
+              <SignUp/>
             </Route>
             <HomePage>
               <Route path="/">

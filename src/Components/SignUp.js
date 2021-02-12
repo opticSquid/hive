@@ -5,30 +5,66 @@ import {
   CardHeader,
   CardContent,
   Typography,
-  FormControlLabel,
   Input,
   InputLabel,
   FormControl,
   FormHelperText,
-  useTheme,
   makeStyles,
+  Button,
+  Box,
 } from "@material-ui/core";
-const UserHandler = () => {
-  const theme = useTheme();
+import { Link,useHistory } from "react-router-dom";
+import axios from "axios";
+const SignUp = () => {
   const classes = useStyles();
+  const history = useHistory();
   const [UserName, setUserName] = useState("");
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [VPassword, setVPassword] = useState("");
+  const SignUp = (e) => {
+    e.preventDefault();
+    if (
+      UserName !== "" &&
+      Email !== "" &&
+      Password !== "" &&
+      VPassword !== ""
+    ) {
+      VerifyPass();
+    } else {
+      alert("Kindly fill all the fields");
+    }
+  };
+  const Cancel = (e) => {
+    e.preventDefault();
+    setEmail("");
+    setUserName("");
+    setPassword("");
+    setVPassword("");
+  };
+  const VerifyPass = () => {
+    if (VPassword === Password) {
+      //put post request here
+      post().then(history.push("/"));
+    } else {
+      alert("Password doesn't match");
+    }
+  };
+  const post = async()=>{
+    let response = {UserName:UserName,Email:Email,Password:Password}
+    axios.post("https://localhost:5000/Users/SignUp",response);
+    return;
+  };
   return (
-    <Card>
+    <Card className={classes.card}>
       <CardHeader
-        title="Login/SignUp"
+        title="SignUp"
         titleTypographyProps={{ variant: "h4" }}
+        style={{ textAlign: "center" }}
       />
       <CardContent>
-        <Grid container spacing={2}>
-          <form>
+        <Box component="form" width="auto">
+          <Grid container spacing={2}>
             <Grid item xs={12}>
               <FormControl>
                 <InputLabel htmlFor="UserName" color="secondary">
@@ -41,8 +77,9 @@ const UserHandler = () => {
                   aria-describedby="User-Name"
                   value={UserName}
                   onChange={(e) => setUserName(e.target.value)}
+                  className={classes.input}
                 />
-                <FormHelperText id="User-Name" required={true}>
+                <FormHelperText id="User-Name">
                   Enter a UserName of Your choice
                 </FormHelperText>
               </FormControl>
@@ -59,8 +96,9 @@ const UserHandler = () => {
                   aria-describedby="User-Email"
                   value={Email}
                   onChange={(e) => setEmail(e.target.value)}
+                  className={classes.input}
                 />
-                <FormHelperText id="User-Email" requied={true}>
+                <FormHelperText id="User-Email">
                   Enter Your Email
                 </FormHelperText>
               </FormControl>
@@ -77,16 +115,17 @@ const UserHandler = () => {
                   aria-describedby="User-Password"
                   value={Password}
                   onChange={(e) => setPassword(e.target.value)}
+                  className={classes.input}
                 />
-                <FormHelperText id="User-Password" requied={true}>
+                <FormHelperText id="User-Password">
                   Enter Your Password
                 </FormHelperText>
               </FormControl>
             </Grid>
             <Grid item xs={12}>
-              <FormControl>
+              <FormControl style={{ margin: "auto" }}>
                 <InputLabel htmlFor="V-Password" color="secondary">
-                   Verify Your Password
+                  Verify Your Password
                 </InputLabel>
                 <Input
                   color="secondary"
@@ -95,19 +134,60 @@ const UserHandler = () => {
                   aria-describedby="User-Verified-Password"
                   value={VPassword}
                   onChange={(e) => setVPassword(e.target.value)}
+                  className={classes.input}
                 />
-                <FormHelperText id="User-Verified-Password" requied={true}>
+                <FormHelperText id="User-Verified-Password">
                   Enter Your Password to Verify
                 </FormHelperText>
               </FormControl>
             </Grid>
-          </form>
-        </Grid>
+            <Grid item xs={6}>
+              <Button
+                variant="contained"
+                type="submit"
+                color="secondary"
+                onClick={SignUp}
+              >
+                SignUp
+              </Button>
+            </Grid>
+            <Grid item xs={6}>
+              <Button
+                variant="contained"
+                type="reset"
+                color="primary"
+                className={classes.cancel}
+                onClick={Cancel}
+              >
+                Cancel
+              </Button>
+            </Grid>
+            <Grid item xs={12}>
+              <Link to="/LoginSignUp" style={{ textAlign: "center" }}>
+                <Typography variant="subtitle1">
+                  ‹- Go back and Sign-in
+                </Typography>
+              </Link>
+            </Grid>
+          </Grid>
+        </Box>
       </CardContent>
     </Card>
   );
 };
 
-export default UserHandler;
+export default SignUp;
 
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({
+  card: {
+    marginLeft: "5%",
+    marginRight: "5%",
+    marginTop: "30%",
+  },
+  input: {
+    width: 290,
+  },
+  cancel: {
+    marginLeft: "30%",
+  },
+}));

@@ -7,7 +7,7 @@ class FbUsers {
         try {
           Facebook = await conn.db("Hive").collection("Facebook")
         } catch (e) {
-          console.error(`Unable to establish collection handles in Facebbok collecion: ${e}`)
+          console.error(`Unable to establish connection with Facebbok collecion: ${e}`)
         }
       }
 /**

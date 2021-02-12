@@ -4,7 +4,7 @@ import FacebookLogin from "react-facebook-login";
 const FbLogin = () => {
   const responseFacebook = (response) => {
     console.log(response);
-    axios.post("https://localhost:5000/login/fblogin/submit",response);
+    axios.post("https://localhost:5000/third-party-login/fblogin/submit",response);
   };
   return (
     <Grid container spacing={2}>
