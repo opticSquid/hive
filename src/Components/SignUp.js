@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import {
   Card,
   Grid,
@@ -13,12 +13,27 @@ import {
   Button,
   Box,
 } from "@material-ui/core";
-import { Link,useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 const SignUp = () => {
   const classes = useStyles();
   const history = useHistory();
   const [UserName, setUserName] = useState("");
+  //Keeps getting called again and again in infinite loop
+  const usernameGenerator = async () => {
+    let username = await axios.get("https://localhost:5000/GenerateUserName");
+    return username.data.username;
+  };
+  useEffect(()=>{
+    usernameGenerator().then((res) => {
+      setUserName(res);
+    }).catch ((err)=>{
+      if(err)
+      {
+        console.error(`You have an error !! ${err}`);
+      }
+    });
+  },[]);
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [VPassword, setVPassword] = useState("");
@@ -50,9 +65,9 @@ const SignUp = () => {
       alert("Password doesn't match");
     }
   };
-  const post = async()=>{
-    let response = {UserName:UserName,Email:Email,Password:Password}
-    axios.post("https://localhost:5000/Users/SignUp",response);
+  const post = async () => {
+    let response = { UserName: UserName, Email: Email, Password: Password };
+    axios.post("https://localhost:5000/Users/SignUp", response);
     return;
   };
   return (

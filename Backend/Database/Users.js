@@ -30,6 +30,13 @@ class Users {
       }
     }
   }
+  /**
+   * @param {string} UserName - UserName
+   * @returns {Object | null} - Found or not
+   */
+  static async findUser(UserName) {
+    return await User.findOne({UserName:UserName});
+  }
 }
 /**
  * @typedef result

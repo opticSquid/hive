@@ -51,6 +51,7 @@ MongoClient.connect(
   app.use("/third-party-login", require("./Routes/Logins/FbLogin"));
   app.use("/Users/Login",require("./Routes/Login"));
   app.use("/Users/SignUp",require("./Routes/SignUp"));
+  app.use("/GenerateUserName",require("./Features/UserNameGenerator"));
   //HTTPS credentials
   const credentials = { key: privateKey, cert: certificate };
   var httpsServer = https.createServer(credentials, app);

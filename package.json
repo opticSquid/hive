@@ -12,6 +12,7 @@
     "axios": "^0.21.1",
     "mongodb": "^3.6.3",
     "mongoose": "^5.11.15",
+    "random-username-generator": "^1.0.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",

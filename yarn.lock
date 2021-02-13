@@ -9612,6 +9612,11 @@ raf@^3.4.1:
   dependencies:
     performance-now "^2.1.0"
 
+random-username-generator@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/random-username-generator/-/random-username-generator-1.0.4.tgz#05a3a62a497bef0cfaa7a850e7822b7969848a7b"
+  integrity sha1-BaOmKkl77wz6p6hQ54IreWmEins=
+
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5, randombytes@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/randombytes/-/randombytes-2.1.0.tgz#df6f84372f0270dc65cdf6291349ab7a473d4f2a"
