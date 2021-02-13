@@ -22,7 +22,6 @@ const findingFanny = async() => {
 router.get("/",  (req, res) => {
   findingFanny().then((response)=>{
     res.status(200).json({ username: response.userName });
-    console.log(response);
   });
 });
 module.exports = router;

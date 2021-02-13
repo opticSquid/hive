@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   Card,
   Grid,
@@ -24,16 +24,17 @@ const SignUp = () => {
     let username = await axios.get("https://localhost:5000/GenerateUserName");
     return username.data.username;
   };
-  useEffect(()=>{
-    usernameGenerator().then((res) => {
-      setUserName(res);
-    }).catch ((err)=>{
-      if(err)
-      {
-        console.error(`You have an error !! ${err}`);
-      }
-    });
-  },[]);
+  useEffect(() => {
+    usernameGenerator()
+      .then((res) => {
+        setUserName(res);
+      })
+      .catch((err) => {
+        if (err) {
+          console.error(`You have an error !! ${err}`);
+        }
+      });
+  }, []);
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [VPassword, setVPassword] = useState("");
@@ -57,6 +58,11 @@ const SignUp = () => {
     setPassword("");
     setVPassword("");
   };
+  function checkIfEmailInString(text) {
+    //var re = /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
+    let re = /\b[a-z0-9-_.]+@[a-z0-9-_.]+(\.[a-z0-9]+)+/;
+    return re.test(text);
+  }
   const VerifyPass = () => {
     if (VPassword === Password) {
       //put post request here
@@ -66,8 +72,15 @@ const SignUp = () => {
     }
   };
   const post = async () => {
-    let response = { UserName: UserName, Email: Email, Password: Password };
-    axios.post("https://localhost:5000/Users/SignUp", response);
+    let emailCheck = checkIfEmailInString(Email);
+    if (emailCheck === true) {
+      let doc = { UserName: UserName, Email: Email, Password: Password };
+      let response = await axios.post(
+        "https://localhost:5000/Users/SignUp",
+        doc
+      );
+      console.log(response);
+    }
     return;
   };
   return (

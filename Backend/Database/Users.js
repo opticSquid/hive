@@ -35,7 +35,22 @@ class Users {
    * @returns {Object | null} - Found or not
    */
   static async findUser(UserName) {
-    return await User.findOne({UserName:UserName});
+    return await User.findOne({ UserName: UserName });
+  }
+  /**
+   * @param {string} UserEmail - Email
+   * @returns {Promise<UsersCheck>}
+   */
+  static async findUserEmail(UserEmail) {
+    let cursor;
+    try{
+      cursor = await User.find({Email:UserEmail})
+    }
+     catch (e) {
+      console.error(`Unable to issue find command, ${e}`)
+      return [];
+     }
+    return cursor.toArray();
   }
 }
 /**
