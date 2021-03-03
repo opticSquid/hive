@@ -34,7 +34,7 @@ MongoClient.connect(process.env.DBURI, {
   useUnifiedTopology: true,
   poolSize: 50,
   serverSelectionTimeoutMS: 30000,
-  wtimeout: 2500,
+    wtimeout: 2500
 })
   .then(async (client) => {
     await fbUsers.injectDB(client);
