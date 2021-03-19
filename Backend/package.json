@@ -6,7 +6,6 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "axios": "^0.21.1",
     "mongodb": "^3.6.3",
     "random-username-generator": "^1.0.4",
     "body-parser": "^1.19.0",
