@@ -1,5 +1,5 @@
-const router = require("express").Router();
-const bodyParser = require("body-parser");
+const express = require("express");
+const router = express.Router();
 const UserDB = require("../Database/Users");
 const crypto = require("crypto");
 let salt = (length) => {
@@ -10,12 +10,17 @@ let salt = (length) => {
 };
 let encrypt = (Password) => {
   let salted = salt(32);
-  let hash = crypto.createHmac("sha3-512", salted);
-  hash.update(Password);
-  let value = hash.digest("hex");
+  let hash = crypto.createHmac("sha3-512", salted).update(Password).digest("hex");
+  // Cipher Salt
+  let key = process.env.key;
+  let iv = crypto.randomBytes(16);
+ let Cipher = crypto.createCipheriv("aes-256-cbc", key, iv);
+ let encrypted = Cipher.update(salted, "hex", "hex");
+ encrypted+= Cipher.final("hex");
+
   return {
-    salt: salted,
-    PassowrdHash: value,
+    salt: encrypted,
+    PassowrdHash: hash,
   };
 };
 const addUsertoDB = async (UserName, Email, encryptedPass) => {
@@ -30,21 +35,21 @@ const addUsertoDB = async (UserName, Email, encryptedPass) => {
 };
 router.post(
   "/",
-  bodyParser.urlencoded({ extended: false }),
-  bodyParser.json(),
+  express.urlencoded({ extended: true}),
+  express.json(),
   (req, res) => {
     let body = req.body;
     let encryptedPass = encrypt(body.Password);
     addUsertoDB(body.UserName, body.Email, encryptedPass).then((response) => {
       if (response.UserExists === true) {
         res.status(401).json({ m: "Any other User exists having same email" });
-        console.log(1);
+        console.log("Any other account exists with same email id");
       } else if (response.UserExists === false && "error" in response.status) {
         res.status(401).json({ m: "User having same Credentials exist" });
-        console.log(2);
+        console.log("Users having all same credentials exist in DB already");
       } else {
         res.status(200).json({ m: "User Registered" });
-        console.log(3);
+        console.log("User Registered");
       }
     });
   }

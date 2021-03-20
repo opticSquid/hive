@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@babel/register": "^7.12.13",
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
     "@testing-library/jest-dom": "^5.11.4",
@@ -17,7 +16,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "server": "nodemon ServerStarter.js",
+    "server": "cd ../Backend && nodemon index.js",
     "client": "react-scripts start",
     "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "build": "react-scripts build",
@@ -45,7 +44,6 @@
   "proxy": "https://localhost:5000",
   "devDependencies": {
     "concurrently": "^5.3.0",
-    "dotenv": "^8.2.0",
     "nodemon": "^2.0.7",
     "react-facebook-login": "^4.1.1"
   }

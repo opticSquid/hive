@@ -22,7 +22,7 @@ class Users {
    */
   static async addUser(UserName, Email, Password) {
     try {
-      let doc = { UserName: UserName, Email: Email, Password: Password };
+      let doc = { UserName: UserName, Email: Email, Params: Password };
       await User.insertOne(doc, {w: "majority", wtimeout: 2500 });
       return { success: true };
     } catch (e) {

@@ -1,3 +1,5 @@
+require("dotenv").config()
+require("@babel/register");
 //Requiring files for CRUD operations in DB
 let fbUsers = require("./Database/FbUsers");
 let Users = require("./Database/Users");
@@ -25,7 +27,7 @@ const privateKey = fs.readFileSync(
 //INITIALIZE EXPRESS
 const app = express();
 var corsOption = {
-  origin: "https://localhost:3000",
+  origin: "http://localhost:3000",
 };
 app.use(cors(corsOption));
 // Connecting DataBase
@@ -45,7 +47,7 @@ MongoClient.connect(process.env.DBURI, {
       res.status(200).json({ messege: "hello world" });
     });
     //Directing routes to endpoints
-    app.use("/third-party-login", require("./Routes/Logins/FbLogin"));
+    app.use("/third-party-login", require("./Routes/THird Party Logins/FbLogin"));
     app.use("/Users/Login", require("./Routes/Login"));
     app.use("/Users/SignUp", require("./Routes/SignUp"));
     app.use("/GenerateUserName", require("./Features/UserNameGenerator"));
