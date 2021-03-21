@@ -12,22 +12,24 @@ let encrypt = (Password) => {
   let salted = salt(32);
   let hash = crypto.createHmac("sha3-512", salted).update(Password).digest("hex");
   // Cipher Salt
-  let key = process.env.key;
-  let iv = crypto.randomBytes(16);
+  const key = process.env.key;
+  const iv = crypto.randomBytes(16);
  let Cipher = crypto.createCipheriv("aes-256-cbc", key, iv);
  let encrypted = Cipher.update(salted, "hex", "hex");
  encrypted+= Cipher.final("hex");
-
   return {
     salt: encrypted,
+    iv: iv,
     PassowrdHash: hash,
   };
 };
-const addUsertoDB = async (UserName, Email, encryptedPass) => {
+const addUsertoDB = async (UserName, Email, encryptedPass, Buffer) => {
+  // Checking if the User already Exists
   let checkUser = await UserDB.findUserEmail(Email);
   let status;
   if (checkUser.length === 0) {
-    status = await UserDB.addUser(UserName, Email, encryptedPass);
+    // If doesn;t exist 
+    status = await UserDB.addUser(UserName, Email, encryptedPass, Buffer);
     return { UserExists: false, status: status };
   } else {
     return { UserExists: true };
@@ -40,7 +42,8 @@ router.post(
   (req, res) => {
     let body = req.body;
     let encryptedPass = encrypt(body.Password);
-    addUsertoDB(body.UserName, body.Email, encryptedPass).then((response) => {
+    let param = {Salt: encryptedPass.salt, Password: encryptedPass.PassowrdHash}
+    addUsertoDB(body.UserName, body.Email, param, encryptedPass.iv).then((response) => {
       if (response.UserExists === true) {
         res.status(401).json({ m: "Any other User exists having same email" });
         console.log("Any other account exists with same email id");

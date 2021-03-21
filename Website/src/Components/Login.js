@@ -18,13 +18,13 @@ import axios from "axios";
 const Login = () => {
   const classes = useStyles();
   const history = useHistory();
-  const [UserName, setUserName] = useState("");
+  const [UserEmail, setUserEmail] = useState("");
 
   const [Password, setPassword] = useState("");
 
   const Signin = (e) => {
     e.preventDefault();
-    if (UserName !== "" && Password !== "") {
+    if (UserEmail !== "" && Password !== "") {
       //Post request goes here
       post().then(history.push("/"));
     } else {
@@ -32,7 +32,7 @@ const Login = () => {
     }
   };
   const post = async() =>{
-    let response = {UserName:UserName,Password:Password}
+    let response = {Email:UserEmail,Password:Password}
     axios.post("https://localhost:5000/Users/Login",response);
     return;
   }
@@ -48,20 +48,20 @@ const Login = () => {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <FormControl>
-                <InputLabel htmlFor="UserName" color="secondary">
-                  Enter UserName
+                <InputLabel htmlFor="Email" color="secondary">
+                  Email
                 </InputLabel>
                 <Input
                   color="secondary"
-                  id="UserName"
+                  id="Email"
                   type="text"
-                  aria-describedby="User-Name"
-                  value={UserName}
-                  onChange={(e) => setUserName(e.target.value)}
+                  aria-describedby="User Email"
+                  value={UserEmail}
+                  onChange={(e) => setUserEmail(e.target.value)}
                   className={classes.input}
                 />
                 <FormHelperText id="User-Name">
-                  Enter your UserName
+                  Enter your Email
                 </FormHelperText>
               </FormControl>
             </Grid>

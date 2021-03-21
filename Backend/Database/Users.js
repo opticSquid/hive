@@ -18,11 +18,12 @@ class Users {
    * @param {string} UserName
    * @param {string} Email
    * @param {object} Passowrd
+   * @param {Buffer} iv
    * @returns {result}
    */
-  static async addUser(UserName, Email, Password) {
+  static async addUser(UserName, Email, Password, iv) {
     try {
-      let doc = { UserName: UserName, Email: Email, Params: Password };
+      let doc = { UserName: UserName, Email: Email, Params: Password, iv: iv };
       await User.insertOne(doc, {w: "majority", wtimeout: 2500 });
       return { success: true };
     } catch (e) {
@@ -46,7 +47,7 @@ class Users {
   static async findUserEmail(UserEmail) {
     let cursor;
     try{
-      cursor = await User.find({Email:UserEmail})
+      cursor = await User.find({Email:UserEmail},{projection:{Email:1, Params:1, iv:1, _id:0}});
     }
      catch (e) {
       console.error(`Unable to issue find command, ${e}`)
