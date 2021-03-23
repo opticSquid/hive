@@ -2,7 +2,7 @@ const { MongoWriteConcernError } = require("mongodb");
 
 let User;
 class Users {
-  static async injectDB(conn) {
+  static async DbConnect(conn) {
     if (User) {
       return;
     }

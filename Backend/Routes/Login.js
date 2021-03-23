@@ -24,12 +24,18 @@ router.post("/",express.urlencoded({extended:true}),express.json(),(req,res)=>{
         const reqPassword = decipher(response[0].Params.Salt, response[0].iv, body.Password)
         if (reqPassword === response[0].Params.Password)
         {
-            res.status(200).json({status:`Login Successful of Email ${response[0].Email}`})
+            console.log("Login Succeeded");
+            res.status(200).json({status:`Login Successful of Email ${response[0].Email}`});
+        }
+        else
+        {
+            console.log("Email or Passoword Wrong");
+            res.status(401).json({status:"Login not authorized"});
         }
 
     }).catch((err)=>{
         console.error("Something Went Wrong While Logging in \n", err);
-        res.status(300).json({status:"Login Unauthorized"})
+        res.status(400).json({status:"Some thing went wrong try refreshing the page and logging in again"})
     });
 })
 exports = module.exports = router;

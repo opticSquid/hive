@@ -1,6 +1,6 @@
 let Facebook;
 class FbUsers {
-    static async injectDB(conn) {
+    static async DbConnect(conn) {
         if (Facebook) {
           return
         }
@@ -27,11 +27,11 @@ class FbUsers {
       return { error: e }
     }
   }
-}
-/**
+  /**
  * Success/Error return object
  * @typedef DAOResponse
  * @property {boolean} [success] - Success
  * @property {string} [error] - Error
  */
+}
 module.exports = FbUsers;

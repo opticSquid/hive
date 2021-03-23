@@ -1,36 +1,46 @@
+// Requiring .env config files
 require("dotenv").config()
-require("@babel/register");
+
+// Requiring Express and MOngoDB
+const express = require("express");
+const { MongoClient } = require("mongodb");
+
 //Requiring files for CRUD operations in DB
 let fbUsers = require("./Database/FbUsers");
 let Users = require("./Database/Users");
-const express = require("express");
-//Using CORS to allow development
+
+//Using CORS and other modules to make HTTPS server in development
 const cors = require("cors");
 const https = require("https");
 const fs = require("fs");
 const path = require("path");
-const { MongoClient } = require("mongodb");
 const certificate = fs.readFileSync(
-  path.join(__dirname + "/../server.cert"),
+  path.join(__dirname + "/server.cert"),
   "utf-8",
   (err, data) => {
     if (err) throw err;
   }
 );
 const privateKey = fs.readFileSync(
-  path.join(__dirname + "/../server.key"),
+  path.join(__dirname + "/server.key"),
   "utf-8",
   (err, data) => {
     if (err) throw err;
   }
 );
+
 //INITIALIZE EXPRESS
 const app = express();
+
+// Writing a configuration to only accept requests from given frontend address
 var corsOption = {
   origin: "http://localhost:3000",
 };
+
+// making the express server to use CORS configuration
 app.use(cors(corsOption));
-// Connecting DataBase
+
+// Connecting to remote DataBase
 MongoClient.connect(process.env.DBURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -38,27 +48,33 @@ MongoClient.connect(process.env.DBURI, {
   serverSelectionTimeoutMS: 30000,
     wtimeout: 2500
 })
-  .then(async (client) => {
-    await fbUsers.injectDB(client);
-    await Users.injectDB(client);
-    // Creating Endpoints
+  .then(async (DbConnection) => {
+    //If the connection to the remote Mongo Server is succeeded then the Mongo Driver returns a connection to DB here it is DbConnection
+
+    //Pushing that connection to the files that do CRUD operation on DB
+    await fbUsers.DbConnect(DbConnection);
+    await Users.DbConnect(DbConnection);
+
+    // Creating Home Endpoint
     app.get("/", (req, res) => {
       res.setHeader("Content-Type", "application/json");
-      res.status(200).json({ messege: "hello world" });
+      res.status(200).json({ Messege: "Welcome to the backend of Hive" });
     });
-    //Directing routes to endpoints
-    app.use("/third-party-login", require("./Routes/THird Party Logins/FbLogin"));
+
+    //Directing other routes to respective endpoints
+    app.use("/third-party-login", require("./Routes/Third Party Logins/FbLogin"));
     app.use("/Users/Login", require("./Routes/Login"));
     app.use("/Users/SignUp", require("./Routes/SignUp"));
     app.use("/GenerateUserName", require("./Features/UserNameGenerator"));
+
     //HTTPS credentials
     const credentials = { key: privateKey, cert: certificate };
     var httpsServer = https.createServer(credentials, app);
-    //setting port to listen
+
+    //Setting port to listen
     const port = process.env.PORT || 5000;
-    //app.listen(port, () => console.log(`Server running on PORT: ${port}`));
     httpsServer.listen(port, () =>
-      console.log(`Server running on PORT: ${port}`)
+      console.log(`Server running on https://localhost:${port}`)
     );
   })
   .catch((err) => {
