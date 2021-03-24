@@ -8,6 +8,7 @@ const { MongoClient } = require("mongodb");
 //Requiring files for CRUD operations in DB
 let fbUsers = require("./Database/FbUsers");
 let Users = require("./Database/Users");
+let activeUsers = require("./Database/ActiveSession");
 
 //Using CORS and other modules to make HTTPS server in development
 const cors = require("cors");
@@ -34,7 +35,7 @@ const app = express();
 
 // Writing a configuration to only accept requests from given frontend address
 var corsOption = {
-  origin: "http://localhost:3000",
+  origin: "https://localhost:3000",
 };
 
 // making the express server to use CORS configuration
@@ -54,6 +55,7 @@ MongoClient.connect(process.env.DBURI, {
     //Pushing that connection to the files that do CRUD operation on DB
     await fbUsers.DbConnect(DbConnection);
     await Users.DbConnect(DbConnection);
+    await activeUsers.DbConnect(DbConnection);
 
     // Creating Home Endpoint
     app.get("/", (req, res) => {

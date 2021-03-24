@@ -26,15 +26,18 @@ const Login = () => {
     e.preventDefault();
     if (UserEmail !== "" && Password !== "") {
       //Post request goes here
-      post().then(history.push("/"));
+      post().then((response)=>{
+        console.log(response.data);
+        history.push("/");
+      });
     } else {
       alert("Kindly fill all the fields");
     }
   };
   const post = async() =>{
-    let response = {Email:UserEmail,Password:Password}
-    axios.post("https://localhost:5000/Users/Login",response);
-    return;
+    let request = {Email:UserEmail,Password:Password}
+    let response = await axios.post("https://localhost:5000/Users/Login",request);
+    return response;
   }
   return (
     <Card className={classes.card}>
