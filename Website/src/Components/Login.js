@@ -28,7 +28,7 @@ const Login = () => {
       //Post request goes here
       post().then((response)=>{
         console.log(response.data);
-        history.push("/");
+        history.push("/")
       });
     } else {
       alert("Kindly fill all the fields");

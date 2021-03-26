@@ -66,7 +66,17 @@ const SignUp = () => {
   const VerifyPass = () => {
     if (VPassword === Password) {
       //put post request here
-      post().then(history.push("/"));
+      post().then((resp) => {
+        if (
+          resp.response.status === 200 &&
+          resp.response.data.m === "User Registered"
+        ) {
+          history.push("/LoginSignUp");
+        } else {
+          let url = `/error/307/${resp.response.data.m}`;
+          return history.push(url);
+        }
+      });
     } else {
       alert("Password doesn't match");
     }
@@ -79,9 +89,10 @@ const SignUp = () => {
         "https://localhost:5000/Users/SignUp",
         doc
       );
-      console.log(response);
+      return { response: response };
+    } else {
+      return { response: null };
     }
-    return;
   };
   return (
     <Card className={classes.card}>

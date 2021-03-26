@@ -45,7 +45,7 @@ router.post(
     let param = {Salt: encryptedPass.salt, Password: encryptedPass.PassowrdHash}
     addUsertoDB(body.UserName, body.Email, param, encryptedPass.iv).then((response) => {
       if (response.UserExists === true) {
-        res.status(401).json({ m: "Any other User exists having same email" });
+        res.status(200).json({ m: "Any other User exists having same email" });
         console.log("Any other account exists with same email id");
       } else if (response.UserExists === false && "error" in response.status) {
         res.status(401).json({ m: "User having same Credentials exist" });

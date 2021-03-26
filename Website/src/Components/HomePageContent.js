@@ -1,7 +1,7 @@
 function HomePageContent(props) {
     return (
         <div>
-            <h1>Help</h1>
+            <h1>Hive</h1>
         </div>
     );
 }
