@@ -73,7 +73,7 @@ const SignUp = () => {
         ) {
           history.push("/LoginSignUp");
         } else {
-          let url = `/error/307/${resp.response.data.m}`;
+          let url = `/error/${resp.response.data.status}/${resp.response.data.m}`;
           return history.push(url);
         }
       });

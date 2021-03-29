@@ -21,15 +21,20 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
-
+import AssessmentIcon from "@material-ui/icons/Assessment";
+import ScheduleIcon from "@material-ui/icons/Schedule";
+import TimelineIcon from "@material-ui/icons/Timeline";
 let drawerWidth;
 if (window.innerWidth > 600) {
   drawerWidth = 240;
 } else {
   drawerWidth = 180;
 }
+const options = [
+  { text: "Analytics", icon: <AssessmentIcon /> },
+  { text: "Scheduled Posts", icon: <ScheduleIcon /> },
+  { text: "Timeline", icon: <TimelineIcon /> },
+];
 
 const NavBar = (props) => {
   const theme = useTheme();
@@ -47,12 +52,7 @@ const NavBar = (props) => {
 
   return (
     <div className={classes.root}>
-      <AppBar
-        position="fixed"
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
-        })}
-      >
+      <AppBar position="fixed" className={clsx(classes.appBar)}>
         <Toolbar>
           <Grid container>
             <Grid item xs={4}>
@@ -127,27 +127,15 @@ const NavBar = (props) => {
             )}
           </IconButton>
         </div>
-        <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          {options.map((ops, idx) => {
+            return (
+              <ListItem button key={idx}>
+                <ListItemIcon>{ops.icon}</ListItemIcon>
+                <ListItemText primary={ops.text} />
+              </ListItem>
+            );
+          })}
         </List>
       </Drawer>
       <main
@@ -157,9 +145,6 @@ const NavBar = (props) => {
       >
         <div className={classes.drawerHeader} />
         {/* Content Goes here */}
-        {/* <Typography variant="h1">
-          Hello
-        </Typography> */}
         {props.children}
       </main>
     </div>
@@ -175,15 +160,6 @@ const useStyles = makeStyles((theme) => ({
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
-    }),
-  },
-
-  appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
     }),
   },
   navIcons: {
