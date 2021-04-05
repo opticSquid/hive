@@ -21,7 +21,7 @@ const SignUp = () => {
   const [UserName, setUserName] = useState("");
   //Keeps getting called again and again in infinite loop
   const usernameGenerator = async () => {
-    let username = await axios.get("https://localhost:5000/GenerateUserName");
+    let username = await axios.get("https://localhost:5000/Features/GenerateUserName");
     return username.data.username;
   };
   useEffect(() => {

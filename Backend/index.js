@@ -64,10 +64,9 @@ MongoClient.connect(process.env.DBURI, {
     });
 
     //Directing other routes to respective endpoints
-    app.use("/third-party-login", require("./Routes/Third Party Logins/FbLogin"));
-    app.use("/Users/Login", require("./Routes/Login"));
-    app.use("/Users/SignUp", require("./Routes/SignUp"));
-    app.use("/GenerateUserName", require("./Features/UserNameGenerator"));
+    app.use("/third-party-login", require("./Routes/Third Party Logins/3rdpaty"));
+    app.use("/Users",require("./Routes/Users"));
+    app.use("/Features", require("./Features/features"));
 
     //HTTPS credentials
     const credentials = { key: privateKey, cert: certificate };
