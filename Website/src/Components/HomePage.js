@@ -8,7 +8,7 @@ import List from "@material-ui/core/List";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
+//import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
@@ -72,11 +72,11 @@ const NavBar = (props) => {
               </Typography>
             </Grid>
             <Grid item xs={4}>
-              <Link to="/LoginSignUp" className={classes.Link}>
-                <IconButton style={{ marginLeft: "60%" }}>
+              <IconButton style={{ marginLeft: "60%" }}>
+                <Link to="/LoginSignUp" className={classes.Link}>
                   <AccountCircleIcon />
-                </IconButton>
-              </Link>
+                </Link>
+              </IconButton>
             </Grid>
             <Grid item xs={3} className={classes.navIcons}>
               <Link to="/" className={classes.Link}>
@@ -167,6 +167,7 @@ const useStyles = makeStyles((theme) => ({
   },
   Link: {
     textDecoration: "none",
+    color: "inherit",
   },
   ActiveButton: {
     color: theme.palette.secondary.main,

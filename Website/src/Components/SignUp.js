@@ -4,7 +4,6 @@ import {
   Grid,
   CardHeader,
   CardContent,
-  Typography,
   Input,
   InputLabel,
   FormControl,
@@ -12,16 +11,23 @@ import {
   makeStyles,
   Button,
   Box,
+  useMediaQuery,
+  CardMedia,
 } from "@material-ui/core";
 import { Link, useHistory } from "react-router-dom";
+import FaceIcon from "@material-ui/icons/Face";
 import axios from "axios";
+import { red } from "@material-ui/core/colors";
 const SignUp = () => {
   const classes = useStyles();
   const history = useHistory();
   const [UserName, setUserName] = useState("");
-  //Keeps getting called again and again in infinite loop
+  // is the minimum width 600px false for mobile devides
+  const mediaQuery = useMediaQuery("(min-width:600px)");
   const usernameGenerator = async () => {
-    let username = await axios.get("https://localhost:5000/Features/GenerateUserName");
+    let username = await axios.get(
+      "https://localhost:5000/Features/GenerateUserName"
+    );
     return username.data.username;
   };
   useEffect(() => {
@@ -95,7 +101,10 @@ const SignUp = () => {
     }
   };
   return (
-    <Card className={classes.card}>
+    <Card className={mediaQuery ? classes.cardDesktop : classes.card}>
+      <CardMedia>
+        <FaceIcon className={mediaQuery ? classes.IconDesktop : classes.Icon} />
+      </CardMedia>
       <CardHeader
         title="SignUp"
         titleTypographyProps={{ variant: "h4" }}
@@ -105,7 +114,7 @@ const SignUp = () => {
         <Box component="form" width="auto">
           <Grid container spacing={2}>
             <Grid item xs={12}>
-              <FormControl>
+              <FormControl className={mediaQuery ? classes.FormDesktop : null}>
                 <InputLabel htmlFor="UserName" color="secondary">
                   Enter UserName
                 </InputLabel>
@@ -116,15 +125,15 @@ const SignUp = () => {
                   aria-describedby="User-Name"
                   value={UserName}
                   onChange={(e) => setUserName(e.target.value)}
-                  className={classes.input}
+                  className={mediaQuery ? classes.inputDesktop : classes.input}
                 />
                 <FormHelperText id="User-Name">
-                  Enter a UserName of Your choice
+                  Enter a UserName of Your choice OR use the generated User Name
                 </FormHelperText>
               </FormControl>
             </Grid>
             <Grid item xs={12}>
-              <FormControl>
+              <FormControl className={mediaQuery ? classes.FormDesktop : null}>
                 <InputLabel htmlFor="Email" color="secondary">
                   Email
                 </InputLabel>
@@ -135,7 +144,7 @@ const SignUp = () => {
                   aria-describedby="User-Email"
                   value={Email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className={classes.input}
+                  className={mediaQuery ? classes.inputDesktop : classes.input}
                 />
                 <FormHelperText id="User-Email">
                   Enter Your Email
@@ -143,7 +152,7 @@ const SignUp = () => {
               </FormControl>
             </Grid>
             <Grid item xs={12}>
-              <FormControl>
+              <FormControl className={mediaQuery ? classes.FormDesktop : null}>
                 <InputLabel htmlFor="Password" color="secondary">
                   Password
                 </InputLabel>
@@ -154,7 +163,7 @@ const SignUp = () => {
                   aria-describedby="User-Password"
                   value={Password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className={classes.input}
+                  className={mediaQuery ? classes.inputDesktop : classes.input}
                 />
                 <FormHelperText id="User-Password">
                   Enter Your Password
@@ -162,7 +171,7 @@ const SignUp = () => {
               </FormControl>
             </Grid>
             <Grid item xs={12}>
-              <FormControl style={{ margin: "auto" }}>
+              <FormControl className={mediaQuery ? classes.FormDesktop : null}>
                 <InputLabel htmlFor="V-Password" color="secondary">
                   Verify Your Password
                 </InputLabel>
@@ -173,7 +182,7 @@ const SignUp = () => {
                   aria-describedby="User-Verified-Password"
                   value={VPassword}
                   onChange={(e) => setVPassword(e.target.value)}
-                  className={classes.input}
+                  className={mediaQuery ? classes.inputDesktop : classes.input}
                 />
                 <FormHelperText id="User-Verified-Password">
                   Enter Your Password to Verify
@@ -186,6 +195,7 @@ const SignUp = () => {
                 type="submit"
                 color="secondary"
                 onClick={SignUp}
+                className={mediaQuery ? classes.SignUpDesktop : null}
               >
                 SignUp
               </Button>
@@ -202,11 +212,11 @@ const SignUp = () => {
               </Button>
             </Grid>
             <Grid item xs={12}>
-              <Link to="/LoginSignUp" style={{ textAlign: "center" }}>
-                <Typography variant="subtitle1">
-                  ‹- Go back and Sign-in
-                </Typography>
-              </Link>
+              <Button variant="outlined" className={mediaQuery?classes.SignInDesktop:classes.Signin}>
+                <Link to="/LoginSignUp" style={{ textDecoration: "none", color:"inherit" }}>
+                  Existing User? Sign in
+                </Link>
+              </Button>
             </Grid>
           </Grid>
         </Box>
@@ -218,15 +228,48 @@ const SignUp = () => {
 export default SignUp;
 
 const useStyles = makeStyles((theme) => ({
+  cardDesktop: {
+    marginTop: "1%",
+    marginLeft: "20%",
+    width: "60%",
+    boxShadow: "0px 0px 10px #bdbdbd",
+  },
   card: {
     marginLeft: "5%",
     marginRight: "5%",
     marginTop: "30%",
   },
+  FormDesktop: {
+    marginLeft: "10%",
+    width: "80%",
+    marginTop: "-1%",
+  },
+  inputDesktop: {
+    widht: "100%",
+  },
   input: {
     width: 290,
+  },
+  IconDesktop: {
+    fontSize: 200,
+    marginLeft: "39%",
+  },
+  Icon: {
+    fontSize: 100,
+    marginLeft: "35%",
+  },
+  SignUpDesktop: {
+    marginLeft: "50%",
   },
   cancel: {
     marginLeft: "30%",
   },
+  SignInDesktop: {
+    marginLeft: "38%",
+    color: red[700],
+  },
+  Signin:{
+    marginLeft: "13%",
+    color: red[700],
+  }
 }));
