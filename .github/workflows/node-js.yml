@@ -26,6 +26,15 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: cd ./Server/
+    - run: npm install --production
+    - run: npm run build --if-present
+    - run: npm test --if-present
+    - run: cd ../Website/
+    - run: npm install --production
+    - run: npm run build --if-present
+    - run: npm test --if-present
+    - run: cd ../app/
     - run: npm install --production
     - run: npm run build --if-present
     - run: npm test --if-present
