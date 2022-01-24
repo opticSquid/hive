@@ -1,10 +1,9 @@
 // Requiring .env config files
-require("dotenv").config()
+require("dotenv").config();
 
 // Requiring Express and MOngoDB
 const express = require("express");
 const { MongoClient } = require("mongodb");
-
 //Requiring files for CRUD operations in DB
 let fbUsers = require("./Database/FbUsers");
 let Users = require("./Database/Users");
