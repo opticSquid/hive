@@ -1,4 +1,4 @@
-<p>
+<p align="center">
 <img src="/Assets/Logo.png" alt="Hive">
 </p>
 
