@@ -23,4 +23,4 @@ To report a security vulnerability
 + We release new versions every 2 (two) months if the vulnerability is of
   - LOW SEVEARITY  -> Patched in next release
   - MODERATE SEVEARITY -> Patched in  1 (one) month or less
-  - HIGH SEVEARITY -> Emergency patch released within maximum 2 (two) days of reporting
+  - HIGH & CRITICAL SEVEARITY -> Emergency patch released within maximum 2 (two) days of reporting
