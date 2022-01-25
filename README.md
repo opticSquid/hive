@@ -31,7 +31,13 @@ It is an open source social media management platform for content creators. It b
 2. UI should be responsive for the web client keeping a mobile first approach.
 3. For both web and mobile app in the UI utmost priority should be given to accessbility and intuitiveness for all the functionalities of the app resulting in better UX.
 
-## Links to related content for learning
+### For contributing to the repo see [Contributing Guidelines](./CONTRIBUTING.md)
+
+### For Security realted things see [Security Policy](./SECURITY.md)
+
+### To work in this repo you need to adhere by this [Code of Conduct](./CODE_OF_CONDUCT.md)
+
+### Links to related content for learning
 
 ### Backend
 
