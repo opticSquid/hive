@@ -10,9 +10,7 @@ It is an open source social media management platform for content creators. It b
 
 ## Join our Discord Server to interact with the maintainers and community
 
-<p align="center">
 [![Join our Discord server!](https://invidget.switchblade.xyz/msTYRtVR)](https://discord.gg/msTYRtVR)
-</p>
 
 ## Project Aims
 
