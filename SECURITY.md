@@ -12,7 +12,9 @@ These are the versions which are currently recieving security updates and patche
 ## Reporting a Vulnerability
 
 To report a security vulnerability
-1.  Create an issue in the issue section of the Repo. Mentioning the vulnerability.
+
+1. Create an issue in the issue section of the Repo. Mentioning the vulnerability.
+
 2.  
 > If there is a CVE code associated with the vulnerability please mention that {it really helps in learning more about the vuln.  :) }
 
@@ -21,6 +23,6 @@ To report a security vulnerability
 ## How often to expect security patches
 
 + We release new versions every 2 (two) months if the vulnerability is of
-  - LOW SEVEARITY  -> Patched in next release
-  - MODERATE SEVEARITY -> Patched in  1 (one) month or less
-  - HIGH & CRITICAL SEVEARITY -> Emergency patch released within maximum 2 (two) days of reporting
+  + LOW SEVEARITY  -> Patched in next release
+  + MODERATE SEVEARITY -> Patched in  1 (one) month or less
+  + HIGH & CRITICAL SEVEARITY -> Emergency patch released within maximum 2 (two) days of reporting
