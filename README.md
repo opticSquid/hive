@@ -15,7 +15,7 @@ It is an open source social media management platform for content creators. It b
 </p>
 
 For more information visit: [JWoC](https://jwoc.tech/).
-s
+
 **For participant's manual visit:** [Mentee's Guide](https://jwoc.tech/docs/student-manual)
 
 ## Join our Discord Server to interact with the maintainers and community
