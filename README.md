@@ -8,6 +8,16 @@
 
 It is an open source social media management platform for content creators. It brings different social media platforms and services together to create a unified experience for content creators. It brings all the stats of different social media platforms in one place which helps them better understand their audience and make content that matters to them to increase audience engagement and growth of the creator
 
+## The repo is Participating in JWoC (JGEC Winter of Code)
+
+<p align="center">
+<img src="/Assets/jwoc_logo.svg" alt="JWoC Logo">
+</p>
+
+For more information visit: [JWoC](https://jwoc.tech/).
+s
+**For participant's manual visit:** [Mentee's Guide](https://jwoc.tech/docs/student-manual)
+
 ## Join our Discord Server to interact with the maintainers and community
 
 [![Join our Discord server!](https://invidget.switchblade.xyz/msTYRtVR)](https://discord.gg/msTYRtVR)
