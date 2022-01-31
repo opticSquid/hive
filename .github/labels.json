@@ -37,41 +37,41 @@
   {
     "name": "bug",
     "description": "Something isn't working",
-    "color": "#d73a4a"
+    "color": "d73a4a"
   },
   {
     "name": "dependencies",
     "description": "Pull requests that update a dependency file",
-    "color": "#97FAFA"
+    "color": "97FAFA"
   },
   {
     "name": "documentation",
     "description": "Pull requests that update documentation",
-    "color": "#0075ca"
+    "color": "0075ca"
   },
   {
     "name": "duplicate",
     "description": "This issue or pull request already exists",
-    "color": "#cfd3d7"
+    "color": "cfd3d7"
   },
   {
     "name": "enhancement",
     "description": "A feature request",
-    "color": "#7cc576"
+    "color": "7cc576"
   },
   {
     "name": "invalid",
     "description": "The issue or pull request is invalid",
-    "color": "#d73a4a"
+    "color": "d73a4a"
   },
   {
     "name": "question",
     "description": "A question",
-    "color": "#6f42c1"
+    "color": "6f42c1"
   },
   {
     "name": "wontfix",
     "description": "The issue or pull request won't be fixed",
-    "color": "#d73a4a"
+    "color": "d73a4a"
   }
 ]
