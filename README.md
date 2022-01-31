@@ -3,7 +3,14 @@
 </p>
 
 # Hive
-
+![Lines](https://img.shields.io/tokei/lines/github/opticSquid/hive)
+![tests](https://img.shields.io/appveyor/tests/opticSquid/hive)
+![downloads](https://img.shields.io/github/downloads/opticSquid/hive/total)
+![]()
+![license](https://img.shields.io/github/license/opticSquid/hive)
+<br>
+![stars](https://img.shields.io/github/stars/opticSquid/hive?style=social)
+![forks](https://img.shields.io/github/forks/opticSquid/hive?style=social)
 <!-- ![Hive Logo](/Assets/Logo.png) -->
 
 It is an open source social media management platform for content creators. It brings different social media platforms and services together to create a unified experience for content creators. It brings all the stats of different social media platforms in one place which helps them better understand their audience and make content that matters to them to increase audience engagement and growth of the creator
@@ -51,16 +58,15 @@ For more information visit: [JWoC](https://jwoc.tech/).
 
 ### Backend
 
-- Node JS: <https://nodejs.org/en/>
-- Express JS: <http://expressjs.com/>
+[![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en/)
+[![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)](http://expressjs.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io/)
+[![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)](https://swagger.io/)
 - Node JS Design Patterns: <https://blog.logrocket.com/design-patterns-in-node-js/>
-- MongoDB: <https://www.mongodb.com/>
-- Redis: <https://redis.io/>
-- Swagger: <https://swagger.io/>
 
 ### Frontend
-
-- React JS: <https://reactjs.org/>
-- React Native: <https://facebook.github.io/react-native/>
+[![ReactJS](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![ReactNative](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://facebook.github.io/react-native/)
 - React JS Design Patterns: <https://blog.logrocket.com/design-patterns-in-react-js/>
 - Create-react-app: <https://facebook.github.io/create-react-app/>
