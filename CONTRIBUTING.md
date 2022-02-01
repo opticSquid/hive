@@ -26,14 +26,23 @@
         npm install
     ```
 
-3. Now start the backend server (in development mode) by running the command:
+3. Create a new branch for your contribution from the `next` branch of the repo using this command:
+
+    ```sh
+        git checkout -b <your branch name> next
+    ```
+
+    **Advisory**
+    > Do not use main branch. It only contains stable releases. All the changes are done on the next branch. It contains all the changes which are going for next release.
+
+4. Now start the backend server (in development mode) by running the command:
 
     ```sh
         cd ./Server/
         npm run dev
     ```
 
-4.  
+5.  
     > If you want to work in the web client run this command:
 
     ```sh
@@ -48,11 +57,21 @@
         npm start
     ```
 
-5. Make the nessecery changes
-6. Add and commit your changes and push this to your forked remote.
-7. **Make sure the head of your forked remote is up to date with the main repo. (To avoid any breaking changes)**
-8. Create a pull request from the `main` branch of your forked repo to the `next` branch of the main repo.
+6. Make the nessecery changes
+7. Add and commit your changes using this command.
 
+    ```sh
+        git add .
+        git commit -m "Your message"
+    ```
+
+8. Push your changes to the repo using this command:
+
+    ```sh
+        git push origin <your branch name>
+    ```
+
+9. Come to github and raise a pull request from `your_branch` to the `next` branch of the repo.
     > No pull requests will be accepted if made to the main branch. Only admins and moderators with the approval of admin will do the merge to the `main` branch
 
-9. Code will be reviewed and added to the repo if all things go right. You will retain the ownership of the lines of code you wrote.
+10. Code will be reviewed and added to the repo if all things go right. You will retain the ownership of the lines of code you wrote.
