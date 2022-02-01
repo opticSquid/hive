@@ -24,6 +24,12 @@ For more information visit: [JWoC](https://jwoc.tech/).
 
 ## Project Aims
 
+### UI
+
+* Figma designs for the tentative mobile first design of the wesite/web app.
+
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FQQzoh9P3XwJGlh50JPezke%2FHive-Design%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
+
 ### For Backend
 
 1. Having a single backend that serves both the web client and the mobile app.
