@@ -3,22 +3,21 @@
 </p>
 
 # Hive
+
 ![Lines](https://img.shields.io/tokei/lines/github/opticSquid/hive)
 ![tests](https://img.shields.io/appveyor/tests/opticSquid/hive)
 ![downloads](https://img.shields.io/github/downloads/opticSquid/hive/total)
-![]()
 ![license](https://img.shields.io/github/license/opticSquid/hive)
-<br>
+
 ![stars](https://img.shields.io/github/stars/opticSquid/hive?style=social)
 ![forks](https://img.shields.io/github/forks/opticSquid/hive?style=social)
-<!-- ![Hive Logo](/Assets/Logo.png) -->
 
 It is an open source social media management platform for content creators. It brings different social media platforms and services together to create a unified experience for content creators. It brings all the stats of different social media platforms in one place which helps them better understand their audience and make content that matters to them to increase audience engagement and growth of the creator
 
 ## The repo is Participating in JWoC (JGEC Winter of Code)
 
 <p align="center">
-<img src="/Assets/jwoc_logo.svg" alt="JWoC Logo">
+<img src="/Assets/jwoc_logo.svg" alt="JWoC Logo" height="500" width="500" style="object-fit:contain;">
 </p>
 
 For more information visit: [JWoC](https://jwoc.tech/).
@@ -48,7 +47,11 @@ For more information visit: [JWoC](https://jwoc.tech/).
 2. UI should be responsive for the web client keeping a mobile first approach.
 3. For both web and mobile app in the UI utmost priority should be given to accessbility and intuitiveness for all the functionalities of the app resulting in better UX.
 
+> Warning !!!
+
 ### For contributing to the repo see [Contributing Guidelines](./CONTRIBUTING.md)
+
+> This file has been changed please go through the updated guidelines to make your PRs count (for contributions coming under JWOC specially)
 
 ### For Security realted things see [Security Policy](./SECURITY.md)
 
@@ -63,10 +66,13 @@ For more information visit: [JWoC](https://jwoc.tech/).
 [![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 [![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io/)
 [![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)](https://swagger.io/)
+
 - Node JS Design Patterns: <https://blog.logrocket.com/design-patterns-in-node-js/>
 
 ### Frontend
+
 [![ReactJS](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![ReactNative](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://facebook.github.io/react-native/)
+
 - React JS Design Patterns: <https://blog.logrocket.com/design-patterns-in-react-js/>
 - Create-react-app: <https://facebook.github.io/create-react-app/>
