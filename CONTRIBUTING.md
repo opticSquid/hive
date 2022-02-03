@@ -9,13 +9,14 @@
 
 > All the terminal commands written here assumes you are in the root level of the project
 
-1. Clone the repo in your local environemt (your PC basically) by using
+1. Fork this repo.
+2. Clone into the fork in your account by using
 
     ```sh
         git clone "<repo url which comes under the green code button>"
     ```
 
-2. Install the dependencies by running this commands:
+3. Install the dependencies by running this commands:
 
     ```sh
         cd ./Server/
@@ -25,15 +26,6 @@
         cd ../App/
         npm install
     ```
-
-3. Create a new branch for your contribution from the `next` branch of the repo using this command:
-
-    ```sh
-        git checkout -b <your branch name> next
-    ```
-
-    **Advisory**
-    > Do not use main branch. It only contains stable releases. All the changes are done on the next branch. It contains all the changes which are going for next release.
 
 4. Now start the backend server (in development mode) by running the command:
 
@@ -65,13 +57,13 @@
         git commit -m "Your message"
     ```
 
-8. Push your changes to the repo using this command:
+8. Push your changes to the forked repo using this command:
 
     ```sh
         git push origin <your branch name>
     ```
 
-9. Come to github and raise a pull request from `your_branch` to the `next` branch of the repo.
+9. Come to github and raise a pull request from the forked repo branch to the `next` branch of the main repo.
     > No pull requests will be accepted if made to the main branch. Only admins and moderators with the approval of admin will do the merge to the `main` branch
 
 10. Code will be reviewed and added to the repo if all things go right. You will retain the ownership of the lines of code you wrote.
