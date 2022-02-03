@@ -30,6 +30,12 @@ For more information visit: [JWoC](https://jwoc.tech/).
 
 ## Project Aims
 
+### UI
+
+* Link for figma Prototypes
+    https://www.figma.com/file/QQzoh9P3XwJGlh50JPezke/Hive-Design?node-id=0%3A1
+
+
 ### For Backend
 
 1. Having a single backend that serves both the web client and the mobile app.
