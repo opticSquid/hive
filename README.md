@@ -59,6 +59,118 @@ For more information visit: [JWoC](https://jwoc.tech/).
 
 > This file has been changed please go through the updated guidelines to make your PRs count (for contributions coming under JWOC specially)
 
+## Getting started with your first contribution to Open-source 
+The prerequisites you need to have are:
+1. Vscode
+2. git
+3. Basic understanding of Integrating git and GitHub : [Please_refer](https://www.freecodecamp.org/news/how-to-use-git-and-github-in-a-team-like-a-pro/)
+
+## If you don't have Vscode on your machine, [install it](https://www.youtube.com/watch?v=JGsyJI8XG0Y).
+
+## If you don't have git on your machine, [install it](https://help.github.com/articles/set-up-git/).
+
+## Fork this repository
+
+Fork this repository by clicking on the fork button on the top of this page.
+This will create a copy of this repository in your account.
+
+## Clone the repository
+
+Now clone the forked repository to your machine. Go to your GitHub account, open the forked repository, click on the code button and then click the _copy to clipboard_ icon.
+
+Open a terminal and run the following git command:
+
+```
+git clone "url you just copied"
+```
+
+## Create a branch
+
+Create a branch using the `git checkout` command:
+```
+git checkout -b your-new-branch-name
+```
+
+## Make necessary changes and commit those changes
+
+# Running the Project - 
+
+
+For making any of the required changes you have to run the project on your local machine first for that the steps are:-
+
+1. Opening the cloned repo after creation of a seperated branch in Vscode editor.
+2. As mentioned you have to have installed 
+- Node.js ^12.x
+- npm ^6.x 
+in your system in advance
+
+3. Now that the project contains a package.JSON which contains all the information about the dependencies required for running it on your local host. so open the terminal and type
+
+`````
+npm install
+`````
+
+4. now that you've successfully installed all the dependencies in node modules folder run the project by typing 
+
+`````
+npm run start
+`````
+
+5. if by any chance it doesn't run and throws an error saying `'react-scripts' is not recognized as an internal or external command, operable program or batch file` run the following command alongside :
+
+`````
+npm install react-scripts
+`````
+followed by 
+
+`````
+node node_modules/react-scripts/scripts/start.js
+`````
+
+Now that your project is up and running through the desired port : usually 3000 start making the required changes.
+
+# After making the changes Commiting them to the branch
+
+If you go to the project directory and execute the command `git status`, you'll see there are changes.
+
+Add those changes to the branch you just created using the `git add` command:
+
+```
+git add <changed file>
+```
+
+Now commit those changes using the `git commit` command:
+
+```
+git commit -m "Made a few changes to Readme.md file"
+```
+
+## Push changes to GitHub
+
+Push your changes using the command `git push`:
+
+```
+git push origin <add-your-branch-name>
+```
+
+## Submit your changes for review
+
+If you go to your repository on GitHub, you'll see a `Compare & pull request` button. Click on that button.Now submit the pull request.Woof You just made a PR!!
+
+## ONLY 4 Steps to get you there:
+
+1. fork
+2. clone
+3. add and commit
+4. compare and Pull request
+
+## Where to go from here?
+
+Congrats! You just completed the standard _fork -> clone -> edit -> pull request_ workflow that you'll encounter often as a contributor!
+
+Now let's get you started with contributing to the project.
+
+
 ### For Security realted things see [Security Policy](./SECURITY.md)
 
 ### To work in this repo you need to adhere by this [Code of Conduct](./CODE_OF_CONDUCT.md)
