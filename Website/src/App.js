@@ -1,37 +1,25 @@
-import { ThemeProvider, CssBaseline } from "@material-ui/core";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Theme from "./Themes/DefaultTheme";
-import HomePage from "./Components/HomePage";
-import HomePageContent from "./Components/HomePageContent";
-import SignUp from "./Components/SignUp";
-import Login from "./Components/Login";
-import Error from "./Components/Error";
-const App = () => {
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
   return (
-    <ThemeProvider theme={Theme}>
-      <CssBaseline />
-      <Router>
-        <div className="App">
-          <Switch>
-            <Route path="/LoginSignUp">
-              <Login />
-            </Route>
-            <Route path="/signUp">
-              <SignUp/>
-            </Route>
-            <Route path="/error/:err_code/:messege">
-              <Error/>
-            </Route>
-            <HomePage>
-              <Route path="/">
-                <HomePageContent />
-              </Route>
-            </HomePage>
-          </Switch>
-        </div>
-      </Router>
-    </ThemeProvider>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
-};
+}
 
 export default App;
