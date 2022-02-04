@@ -63,7 +63,6 @@
         git push origin <your branch name>
     ```
 
-9. Come to github and raise a pull request from the forked repo branch to the `next` branch of the main repo.
-    > No pull requests will be accepted if made to the main branch. Only admins and moderators with the approval of admin will do the merge to the `main` branch
+9. Come to github and raise a pull request from the forked repo branch to the `main` branch of the main repo.
 
 10. Code will be reviewed and added to the repo if all things go right. You will retain the ownership of the lines of code you wrote.
