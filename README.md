@@ -26,7 +26,7 @@ For more information visit: [JWoC](https://jwoc.tech/).
 
 ## Join our Discord Server to interact with the maintainers and community
 
-[![Join our Discord server!](https://invidget.switchblade.xyz/msTYRtVR)](https://discord.gg/msTYRtVR)
+[![Join our Discord server!](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/msTYRtVR)
 
 ## Project Aims
 
