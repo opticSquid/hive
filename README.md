@@ -28,7 +28,29 @@ For more information visit: [JWoC](https://jwoc.tech/).
 
 [![Join our Discord server!](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/msTYRtVR)
 
-## Project Aims
+# Project Aims
+
+
+## Links to related content for learning
+
+### Backend
+
+[![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en/)
+[![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)](http://expressjs.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io/)
+[![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)](https://swagger.io/)
+
+- Node JS Design Patterns: <https://blog.logrocket.com/design-patterns-in-node-js/>
+
+### Frontend
+
+[![ReactJS](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![ReactNative](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://facebook.github.io/react-native/)
+
+- React JS Design Patterns: <https://blog.logrocket.com/design-patterns-in-react-js/>
+- Create-react-app: <https://facebook.github.io/create-react-app/>
+
 
 ### UI
 
@@ -49,36 +71,126 @@ For more information visit: [JWoC](https://jwoc.tech/).
 
 ### For Frontend
 
-1. Web client uses React.js with `create-react-app` and mobile app uses React Native.
+1. Web client uses React.js with `create-react-app` and mobile app uses `React Native`.
 2. UI should be responsive for the web client keeping a mobile first approach.
 3. For both web and mobile app in the UI utmost priority should be given to accessbility and intuitiveness for all the functionalities of the app resulting in better UX.
 
-> Warning !!!
 
-### For contributing to the repo see [Contributing Guidelines](./CONTRIBUTING.md)
+# For contributing to the repo see [Contributing Guidelines](./CONTRIBUTING.md)
 
 > This file has been changed please go through the updated guidelines to make your PRs count (for contributions coming under JWOC specially)
 
-### For Security realted things see [Security Policy](./SECURITY.md)
+## Getting started with your first contribution to Open-source 
+The prerequisites you need to have are:
+1. Vscode
+2. git
+3. Basic understanding of Integrating git and GitHub : [Please_refer](https://www.freecodecamp.org/news/how-to-use-git-and-github-in-a-team-like-a-pro/)
 
-### To work in this repo you need to adhere by this [Code of Conduct](./CODE_OF_CONDUCT.md)
+If you don't have Vscode on your machine, [install it](https://www.youtube.com/watch?v=JGsyJI8XG0Y).  If you don't have git on your machine, [install it](https://help.github.com/articles/set-up-git/).
 
-### Links to related content for learning
+### Fork this repository
 
-### Backend
+Fork this repository by clicking on the fork button on the top of this page.
+This will create a copy of this repository in your account.
 
-[![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en/)
-[![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)](http://expressjs.com/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
-[![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io/)
-[![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)](https://swagger.io/)
+### Clone the repository
 
-- Node JS Design Patterns: <https://blog.logrocket.com/design-patterns-in-node-js/>
+Now clone the forked repository to your machine. Go to your GitHub account, open the forked repository, click on the code button and then click the _copy to clipboard_ icon.
 
-### Frontend
+Open a terminal and run the following git command:
 
-[![ReactJS](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![ReactNative](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://facebook.github.io/react-native/)
+```
+git clone "url you just copied"
+```
 
-- React JS Design Patterns: <https://blog.logrocket.com/design-patterns-in-react-js/>
-- Create-react-app: <https://facebook.github.io/create-react-app/>
+### Create a branch
+
+Create a branch using the `git checkout` command:
+```
+git checkout -b your-new-branch-name
+```
+
+### Make necessary changes and commit those changes
+
+### Running the Project - 
+
+
+For making any of the required changes you have to run the project on your local machine first for that the steps are:-
+
+1. Opening the cloned repo after creation of a seperated branch in Vscode editor.
+2. As mentioned you have to have installed 
+- Node.js ^12.x
+- npm ^6.x 
+in your system in advance
+
+3. Now that the project contains a package.JSON which contains all the information about the dependencies required for running it on your local host. so open the terminal and type
+
+`````
+npm install
+`````
+
+4. now that you've successfully installed all the dependencies in node modules folder run the project by typing 
+
+`````
+npm run start
+`````
+
+5. if by any chance it doesn't run and throws an error saying `'react-scripts' is not recognized as an internal or external command, operable program or batch file` run the following command alongside :
+
+`````
+npm install react-scripts
+`````
+followed by 
+
+`````
+node node_modules/react-scripts/scripts/start.js
+`````
+
+Now that your project is up and running through the desired port : usually 3000 start making the required changes.
+
+###  After making the changes Commiting them to the branch
+
+If you go to the project directory and execute the command `git status`, you'll see there are changes.
+
+Add those changes to the branch you just created using the `git add` command:
+
+```
+git add <changed file>
+```
+
+Now commit those changes using the `git commit` command:
+
+```
+git commit -m "Made a few changes to Readme.md file"
+```
+
+###  Push changes to GitHub
+
+
+Push your changes using the command `git push`:
+
+```
+git push origin <add-your-branch-name>
+```
+
+### Submit your changes for review
+
+If you go to your repository on GitHub, you'll see a `Compare & pull request` button. Click on that button.Now submit the pull request.Woof You just made a PR!!
+
+### ONLY 4 Steps to get you there:
+
+1. fork
+2. clone
+3. add and commit
+4. compare and Pull request
+
+###  Where to go from here?
+
+Congrats! You just completed the standard _fork -> clone -> edit -> pull request_ workflow that you'll encounter often as a contributor!
+
+Now let's get you started with contributing to the project.
+
+
+# For Security realted things see [Security Policy](./SECURITY.md)
+
+# To work in this repo you need to adhere by this [Code of Conduct](./CODE_OF_CONDUCT.md)
