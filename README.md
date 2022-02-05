@@ -1,12 +1,12 @@
 <p align="center">
-<img src="/Assets/Logo.png" alt="Hive Logo">
+<img src="/Assets/Logo.png" alt="Hive Logo" style="object-fit:contain;">
 </p>
 
 # Hive
 
 ![Lines](https://img.shields.io/tokei/lines/github/opticSquid/hive)
-![tests](https://img.shields.io/appveyor/tests/opticSquid/hive)
-![downloads](https://img.shields.io/github/downloads/opticSquid/hive/total)
+![Open Issues](https://img.shields.io/github/issues-raw/opticSquid/hive)
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/opticSquid/hive)
 ![license](https://img.shields.io/github/license/opticSquid/hive)
 
 ![stars](https://img.shields.io/github/stars/opticSquid/hive?style=social)
@@ -28,8 +28,29 @@ For more information visit: [JWoC](https://jwoc.tech/).
 
 [![Join our Discord server!](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/msTYRtVR)
 
-# Project Aims
+## Project Aims
 
+### UI
+
+- Link for figma Prototypes
+  [Click Here](https://www.figma.com/file/QQzoh9P3XwJGlh50JPezke/Hive-Design?node-id=0%3A1)
+
+### For Backend
+
+1. Having a single backend that serves both the web client and the mobile app.
+2. Backend should be made of `Node.js` with `Express.js`.
+3. Database is `MongoDB`.
+4. For caching purposes use `Redis`.
+5. Code should be scalable from the start.
+6. We will use middleware based approach for all the routes.
+7. `Factory` design pattern is used for handling the success response and error responses so that a standard template can be maintained over all the routes.
+8. We will maintain the API documentation usign `Swagger` and `Swagger UI`.
+
+### For Frontend
+
+1. Web client uses React.js with `create-react-app` and mobile app uses `React Native`.
+2. UI should be responsive for the web client keeping a mobile first approach.
+3. For both web and mobile app in the UI utmost priority should be given to accessbility and intuitiveness for all the functionalities of the app resulting in better UX.
 
 ## Links to related content for learning
 
@@ -51,42 +72,19 @@ For more information visit: [JWoC](https://jwoc.tech/).
 - React JS Design Patterns: <https://blog.logrocket.com/design-patterns-in-react-js/>
 - Create-react-app: <https://facebook.github.io/create-react-app/>
 
-
-### UI
-
-* Link for figma Prototypes
-    https://www.figma.com/file/QQzoh9P3XwJGlh50JPezke/Hive-Design?node-id=0%3A1
-
-
-### For Backend
-
-1. Having a single backend that serves both the web client and the mobile app.
-2. Backend should be made of `Node.js` with `Express.js`.
-3. Database is `MongoDB`.
-4. For caching purposes use `Redis`.
-5. Code should be scalable from the start.
-6. We will use middleware based approach for all the routes.
-7. `Factory` design pattern is used for handling the success response and error responses so that a standard template can be maintained over all the routes.
-8. We will maintain the API documentation usign `Swagger` and `Swagger UI`.
-
-### For Frontend
-
-1. Web client uses React.js with `create-react-app` and mobile app uses `React Native`.
-2. UI should be responsive for the web client keeping a mobile first approach.
-3. For both web and mobile app in the UI utmost priority should be given to accessbility and intuitiveness for all the functionalities of the app resulting in better UX.
-
-
-# For contributing to the repo see [Contributing Guidelines](./CONTRIBUTING.md)
+## For contributing to the repo see [Contributing Guidelines](./CONTRIBUTING.md)
 
 > This file has been changed please go through the updated guidelines to make your PRs count (for contributions coming under JWOC specially)
 
-## Getting started with your first contribution to Open-source 
+## Getting started with your first contribution to Open-source
+
 The prerequisites you need to have are:
+
 1. Vscode
 2. git
 3. Basic understanding of Integrating git and GitHub : [Please_refer](https://www.freecodecamp.org/news/how-to-use-git-and-github-in-a-team-like-a-pro/)
 
-If you don't have Vscode on your machine, [install it](https://www.youtube.com/watch?v=JGsyJI8XG0Y).  If you don't have git on your machine, [install it](https://help.github.com/articles/set-up-git/).
+If you don't have Vscode on your machine, [install it](https://www.youtube.com/watch?v=JGsyJI8XG0Y). If you don't have git on your machine, [install it](https://help.github.com/articles/set-up-git/).
 
 ### Fork this repository
 
@@ -99,98 +97,114 @@ Now clone the forked repository to your machine. Go to your GitHub account, open
 
 Open a terminal and run the following git command:
 
-```
-git clone "url you just copied"
+```sh
+    git clone "url you just copied"
 ```
 
 ### Create a branch
 
 Create a branch using the `git checkout` command:
+
+```sh
+    git checkout -b your-new-branch-name
 ```
-git checkout -b your-new-branch-name
+
+### Make changes and commit
+
+Make the nessecery changes and commit them using the `git commit` command:
+
+```sh
+    git add .
+    git commit -m "your commit message"
 ```
 
-### Make necessary changes and commit those changes
+### Push the changes to the remote repository
 
-### Running the Project - 
+To push the changes to the remote repository, use the `git push` command:
 
+```sh
+    git push origin <your-new-branch-name>
+```
+
+### Running the Project -
 
 For making any of the required changes you have to run the project on your local machine first for that the steps are:-
 
-1. Opening the cloned repo after creation of a seperated branch in Vscode editor.
-2. As mentioned you have to have installed 
-- Node.js ^12.x
-- npm ^6.x 
-in your system in advance
+1.  Opening the cloned repo after creation of a seperated branch in Vscode editor.
+2.  As mentioned you have to have installed
 
-3. Now that the project contains a package.JSON which contains all the information about the dependencies required for running it on your local host. so open the terminal and type
+        - Node.js ^12.x
+        - npm ^6.x
 
-`````
+    in your system in advance
+
+3.  Now that the project contains a package.JSON which contains all the information about the dependencies required for running it on your local host. so open the terminal and type
+
+```
 npm install
-`````
+```
 
-4. now that you've successfully installed all the dependencies in node modules folder run the project by typing 
+4. now that you've successfully installed all the dependencies in node modules folder run the project by typing
 
-`````
+```
 npm run start
-`````
+```
 
-5. if by any chance it doesn't run and throws an error saying `'react-scripts' is not recognized as an internal or external command, operable program or batch file` run the following command alongside :
+5. If by any chance it doesn't run and throws an error saying `'react-scripts' is not recognized as an internal or external command, operable program or batch file` run the following command alongside :
 
-`````
-npm install react-scripts
-`````
-followed by 
+```sh
+    npm install react-scripts
+```
 
-`````
-node node_modules/react-scripts/scripts/start.js
-`````
+followed by
+
+```sh
+    node node_modules/react-scripts/scripts/start.js
+```
 
 Now that your project is up and running through the desired port : usually 3000 start making the required changes.
 
-###  After making the changes Commiting them to the branch
+### After making the changes Commiting them to the branch
 
 If you go to the project directory and execute the command `git status`, you'll see there are changes.
 
 Add those changes to the branch you just created using the `git add` command:
 
-```
-git add <changed file>
+```sh
+    git add <changed file>
 ```
 
 Now commit those changes using the `git commit` command:
 
-```
-git commit -m "Made a few changes to Readme.md file"
+```sh
+    git commit -m "Made a few changes to Readme.md file"
 ```
 
-###  Push changes to GitHub
-
+### Push changes to GitHub
 
 Push your changes using the command `git push`:
 
-```
-git push origin <add-your-branch-name>
+```sh
+    git push origin <add-your-branch-name>
 ```
 
 ### Submit your changes for review
 
 If you go to your repository on GitHub, you'll see a `Compare & pull request` button. Click on that button.Now submit the pull request.Woof You just made a PR!!
 
-### ONLY 4 Steps to get you there:
+### ONLY 4 Steps to get you there
 
 1. fork
 2. clone
 3. add and commit
 4. compare and Pull request
 
-###  Where to go from here?
+### Where to go from here?
 
 Congrats! You just completed the standard _fork -> clone -> edit -> pull request_ workflow that you'll encounter often as a contributor!
 
 Now let's get you started with contributing to the project.
 
+## For Security realted things see [Security Policy](./SECURITY.md)
 
-# For Security realted things see [Security Policy](./SECURITY.md)
-
-# To work in this repo you need to adhere by this [Code of Conduct](./CODE_OF_CONDUCT.md)
+## To work in this repo you need to adhere by this [Code of Conduct](./CODE_OF_CONDUCT.md)
