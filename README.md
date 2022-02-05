@@ -111,6 +111,10 @@ Create a branch using the `git checkout` command:
 
 ### Make changes and commit
 
+To run the project in your local machine see: [Contributing Guidelines](./CONTRIBUTING.md)
+
+Now that your project is up and running through the desired port : usually _localhost:5000_ for the `Server` _localhost:3000_ for the `Website` start making the required changes.
+
 Make the nessecery changes and commit them using the `git commit` command:
 
 ```sh
@@ -124,68 +128,6 @@ To push the changes to the remote repository, use the `git push` command:
 
 ```sh
     git push origin <your-new-branch-name>
-```
-
-### Running the Project -
-
-For making any of the required changes you have to run the project on your local machine first for that the steps are:-
-
-1.  Opening the cloned repo after creation of a seperated branch in Vscode editor.
-2.  As mentioned you have to have installed
-
-        - Node.js ^12.x
-        - npm ^6.x
-
-    in your system in advance
-
-3.  Now that the project contains a package.JSON which contains all the information about the dependencies required for running it on your local host. so open the terminal and type
-
-```
-npm install
-```
-
-4. now that you've successfully installed all the dependencies in node modules folder run the project by typing
-
-```
-npm run start
-```
-
-5. If by any chance it doesn't run and throws an error saying `'react-scripts' is not recognized as an internal or external command, operable program or batch file` run the following command alongside :
-
-```sh
-    npm install react-scripts
-```
-
-followed by
-
-```sh
-    node node_modules/react-scripts/scripts/start.js
-```
-
-Now that your project is up and running through the desired port : usually 3000 start making the required changes.
-
-### After making the changes Commiting them to the branch
-
-If you go to the project directory and execute the command `git status`, you'll see there are changes.
-
-Add those changes to the branch you just created using the `git add` command:
-
-```sh
-    git add <changed file>
-```
-
-Now commit those changes using the `git commit` command:
-
-```sh
-    git commit -m "Made a few changes to Readme.md file"
-```
-
-### Push changes to GitHub
-
-Push your changes using the command `git push`:
-
-```sh
-    git push origin <add-your-branch-name>
 ```
 
 ### Submit your changes for review
