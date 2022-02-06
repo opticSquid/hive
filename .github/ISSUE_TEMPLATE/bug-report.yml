@@ -1,7 +1,7 @@
 name: 🐞 Bug Report
 description: File a Bug Report
 title: "[Bug]: "
-labels: ["bug", "triage"]
+labels: ["bug", "help wanted"]
 body:
   - type: textarea
     id: what-happened
