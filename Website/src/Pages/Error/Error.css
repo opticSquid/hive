@@ -54,4 +54,9 @@ button {
     text-align:center;
     padding: 2px 40px;
     font-family: 'Rosario', sans-serif;
+    border: 0;
+}
+
+button:hover {
+    background-image: linear-gradient(rgba(202, 179, 179, 0.4) 0 0);
 }
