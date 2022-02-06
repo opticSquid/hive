@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function Error(props) {
     const navigate = useNavigate();
-    function handleClick(){
+    function handleClick() {
         navigate(-1);
     }
     return (

@@ -5,7 +5,11 @@ function App() {
     return (
         <Router>
             <Routes>
-                <Route exact path="/error" element={<Error errorMessage="404 not found" />}></Route>
+                <Route
+                    exact
+                    path="/error"
+                    element={<Error errorMessage="404 not found" />}
+                ></Route>
             </Routes>
         </Router>
     );
