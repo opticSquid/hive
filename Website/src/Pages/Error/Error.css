@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Rosario&display=swap');
+
+body {
+    font-family: 'Rosario', sans-serif;
+}
+
+.content {
+    margin-top: -40px;
+}
+
+.content p {
+    margin-top: -14px;
+    color: #797575;
+    font-size: .9rem;
+}
+.content .error-message {
+    color: black;
+    font-size: 1.2rem;
+}
+
+#error-page {
+    display:flex;
+    background-size:cover;
+    background-position:center;
+    height:100vh;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 20px;
+}
+
+#logo {
+    max-height: 600px;
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+
+    
+}
+
+#header {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: -6px;
+    color: #F05656;
+    font-size: 4rem;
+}
+
+button {
+    border-radius: 15px;
+    background-color: #F05656;
+    color: white;
+    font-size: 1.12rem;
+    text-align:center;
+    padding: 2px 40px;
+    font-family: 'Rosario', sans-serif;
+}
