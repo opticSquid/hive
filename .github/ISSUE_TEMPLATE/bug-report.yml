@@ -21,6 +21,7 @@ body:
     id: reproduce
     attributes:
       label: Steps to Reproduce
+      description: Step of actions that may cause the bug
       placeholder: |
                   1.
                   2.
@@ -28,7 +29,8 @@ body:
   - type: textarea
     id: context
     attributes:
-      label: Context (Environment)
+      label: Context (Environment) 
+      description: Post Screenshot if possible
       placeholder: Write your environment or anything helpful!
   - type: checkboxes
     id: terms
