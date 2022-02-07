@@ -1,6 +1,6 @@
-import "./App.css";
-import Head from "./navbar";
-import Social from "./social";
+import "../App.css";
+import Head from "../navbar";
+import Social from "../social";
 
 function App() {
   return (
