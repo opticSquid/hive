@@ -21,9 +21,10 @@ body:
     id: reproduce
     attributes:
       label: Steps to Reproduce
-      placeholder: 1.
-                   2.
-                   3.
+      placeholder: |
+                  1.
+                  2.
+                  3.
   - type: textarea
     id: context
     attributes:
