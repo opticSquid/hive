@@ -1,0 +1,30 @@
+.navbar {
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #b59ad0;
+}
+
+.logo-name {
+  font-size: 60px;
+}
+
+.logo-con {
+  font-size: 20px;
+  color: #520e96;
+  font-weight: bold;
+}
+.navbar h2 {
+  background-color: transparent;
+  font-weight: 500;
+  padding: 1rem;
+  transition: all 0.3s;
+  border-radius: 10px;
+}
+
+.navbar h2:hover {
+  background-color: rgb(58, 58, 58);
+  color: white;
+}
