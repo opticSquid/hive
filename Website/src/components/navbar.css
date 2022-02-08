@@ -1,0 +1,82 @@
+.navbar {
+  height: 10vh;
+  width: 100%;
+  padding: 4rem 7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.logo-name {
+  font-size: 30px;
+}
+
+.logo-con {
+  font-size: 13px;
+  color: #70429f;
+  font-weight: bold;
+}
+.navbar a {
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s;
+  border-radius: 50px;
+}
+
+.navbar a:hover {
+  background-color: #70429f;
+}
+
+.pages {
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  display: none;
+  border: none;
+  background-color: #19161d;
+}
+.dropdown {
+  display: none;
+  padding: 0 4rem;
+  box-shadow: inset 0px 4px 6px 0.5px #292530;
+}
+.dropdown ul {
+  padding-top: 5%;
+  list-style-type: none;
+}
+.dropdown ul li {
+  padding: 2% 0;
+}
+.dropdown ul li a {
+  color: white;
+  text-decoration: none;
+}
+.dropdown ul li a:hover {
+  color: #70429f;
+}
+.display {
+  display: block;
+}
+.no-display {
+  display: none;
+}
+@media only screen and (max-width: 900px) {
+  .navbar {
+    padding: 4rem;
+  }
+  .pages,
+  .profile {
+    display: none;
+  }
+  button {
+    display: block;
+  }
+}
