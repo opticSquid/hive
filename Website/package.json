@@ -37,7 +37,9 @@
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "react-router-dom": "^6.2.1"
+  },
   "author": "Soumalya Bhattacharya",
   "license": "BSD-3-Clause"
 }

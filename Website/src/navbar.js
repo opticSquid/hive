@@ -7,10 +7,10 @@ function Head() {
         <h1 className="logo-name">hive</h1>
         <p className="logo-con">Social media, simplified</p>
       </div>
-      <h2>Content</h2>
-      <h2>Analytics</h2>
-      <h2>Promotions</h2>
-      <h2>Profile</h2>
+      <a href="./content">Content</a>
+      <a href="./analytics">Analytics</a>
+      <a href="./promotions">Promotions</a>
+      <a href="./profile">Profile</a>
     </div>
   );
 }
