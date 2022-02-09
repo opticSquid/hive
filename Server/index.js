@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require("cors");
 const createError = require('http-errors');
+
+const rateLimiter = require('./middleware/rateLimiter');
 const authRoute = require('./routes/auth');
 
 require("dotenv").config();
@@ -10,6 +12,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // To parse incoming form data  
+
+app.use(rateLimiter);
 
 // Setting end points for api
 app.use('/auth', authRoute);
