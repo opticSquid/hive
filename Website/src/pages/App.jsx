@@ -1,6 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
-
 import "./App.css";
 import Head from "../components/navbar";
 import youtube from "../assests/youtube.png";
