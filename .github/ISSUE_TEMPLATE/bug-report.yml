@@ -1,0 +1,42 @@
+name: 🐞 Bug Report
+description: File a Bug Report
+title: "[Bug]: "
+labels: ["bug", "help wanted"]
+body:
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior 
+      placeholder: Tell us what you expected
+    validations:
+      required: true
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: Current Behavior
+      placeholder: Tell us what is current output
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Step of actions that may cause the bug
+      placeholder: |
+                  1.
+                  2.
+                  3.
+  - type: textarea
+    id: context
+    attributes:
+      label: Context (Environment) 
+      description: Post Screenshot if possible
+      placeholder: Write your environment or anything helpful!
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](../../CODE_OF_CONDUCT.md)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
