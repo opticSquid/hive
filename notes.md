@@ -1,0 +1,4 @@
+- [x] Install the routes.
+- [ ] Design the error page // #2c45b7
+- [ ] Dynamic error message
+- [ ] Redirect to the last visited page, when a button is pressed.
