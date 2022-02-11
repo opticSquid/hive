@@ -4,9 +4,9 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import Home from "./Pages/Home";
-import Content from "./Pages/Content";
-import Error from "./Pages/Error/Error";
+import Home from "./pages/Home";
+import Content from "./pages/Content";
+import Error from "./pages/Error/Error";
 function App() {
   return (
     <Router>
