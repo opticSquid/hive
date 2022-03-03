@@ -44,7 +44,7 @@ body {
   font-size: 4rem;
 }
 
-button {
+.error-content button {
   border-radius: 15px;
   background-color: #f05656;
   color: white;
