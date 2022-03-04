@@ -1,0 +1,36 @@
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  background-image: none;
+  margin: 2rem 7rem;
+  padding: 0.5rem;
+  width: 10rem;
+  height: 2.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #70429f;
+  color: white;
+  text-align: center;
+}
+* {
+  color: white;
+}
+select:focus {
+  border: none;
+}
+.info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content hr {
+  border: none;
+  border-top: 1px solid #a9a9a9;
+  width: 82%;
+}

@@ -47,6 +47,7 @@ button {
   display: none;
   padding: 0 4rem;
   box-shadow: inset 0px 4px 6px 0.5px #292530;
+  transition: all 1s;
 }
 .dropdown ul {
   padding-top: 5%;
