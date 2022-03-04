@@ -4,8 +4,8 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import Home from "./pages/Home";
-import Content from "./pages/Content";
+import Home from "./pages/Home/Home";
+import Content from "./pages/Content/Content";
 import Error from "./pages/Error/Error";
 function App() {
   return (
