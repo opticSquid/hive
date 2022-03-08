@@ -1,0 +1,101 @@
+.youtube-analytic {
+  display: flex;
+  flex-direction: column;
+  height: 200vh;
+  width: 82%;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.yt-ana-stats {
+  width: 60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 10rem;
+}
+
+.yt-ana-stats > * {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.yt-ana-stats > * h1 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.yt-ana-stats > * h2 {
+  font-size: 1rem;
+  color: #99939f;
+  font-weight: 600;
+}
+
+.yt-ana-stats svg {
+  width: 2.5rem;
+}
+
+.likes svg {
+  fill: #f00;
+  filter: drop-shadow(0 0 15px #f00);
+}
+
+.comments svg {
+  fill: rgb(255, 255, 0);
+
+  filter: drop-shadow(0 0 15px rgb(255, 255, 0));
+}
+
+.subscribe svg {
+  fill: rgb(0, 255, 255);
+  filter: drop-shadow(0 0 15px rgb(0, 255, 255));
+}
+
+.shares svg {
+  fill: rgb(0, 255, 0);
+  filter: drop-shadow(0 0 15px rgb(0, 255, 0));
+}
+
+.likes h2 {
+  font-size: 1rem;
+}
+
+.yt-ana-graph {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.yt-ana-graph img {
+  width: 80%;
+}
+
+@media only screen and (max-width: 820px) {
+  .yt-ana-stats {
+    width: 100%;
+    gap: 5rem;
+  }
+  .yt-ana-graph img {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 465px) {
+  .youtube-analytic {
+    height: 100vh;
+  }
+  .yt-ana-stats {
+    width: 100%;
+    gap: 2rem;
+  }
+  .yt-ana-stats > * h1 {
+    font-size: 1.5rem;
+  }
+
+  .yt-ana-stats > * h2 {
+    font-size: 0.5rem;
+  }
+}
