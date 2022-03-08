@@ -8,6 +8,8 @@ import Home from "./pages/Home/Home";
 import Content from "./pages/Content/Content";
 import Error from "./pages/Error/Error";
 import Analytics from "./pages/Analytics/Analytics";
+require("bootstrap-icons/font/bootstrap-icons.css");
+
 function App() {
   return (
     <Router>
