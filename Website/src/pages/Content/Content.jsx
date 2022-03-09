@@ -1,4 +1,5 @@
 import { useState } from "react";
+import FacebookContent from "../../components/Facebook/facebookContent";
 
 import InstagramContent from "../../components/Instagram/instagramContent";
 import Head from "../../components/Navbar/navbar";
@@ -23,10 +24,17 @@ function Content() {
           >
             <option value="instagram">Instagram</option>
             <option value="youtube">Youtube</option>
+            <option value="facebook">Facebook</option>
           </select>
         </form>
         <hr />
-        {media === "youtube" ? <YoutubeContent /> : <InstagramContent />}
+        {media === "youtube" ? (
+          <YoutubeContent />
+        ) : media === "instagram" ? (
+          <InstagramContent />
+        ) : (
+          <FacebookContent />
+        )}
       </div>
     </div>
   );

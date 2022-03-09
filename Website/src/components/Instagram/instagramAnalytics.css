@@ -1,0 +1,101 @@
+.instagram-analytic {
+  display: flex;
+  flex-direction: column;
+  height: 200vh;
+  width: 82%;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.ig-ana-stats {
+  width: 60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 10rem;
+}
+
+.ig-ana-stats > * {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.ig-ana-stats > * h1 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.ig-ana-stats > * h2 {
+  font-size: 1rem;
+  color: #99939f;
+  font-weight: 600;
+}
+
+.ig-ana-stats svg {
+  width: 2.5rem;
+}
+
+.likes svg {
+  fill: #f00;
+  filter: drop-shadow(0 0 15px #f00);
+}
+
+.comments svg {
+  fill: rgb(255, 255, 0);
+
+  filter: drop-shadow(0 0 15px rgb(255, 255, 0));
+}
+
+.subscribe svg {
+  fill: rgb(0, 255, 255);
+  filter: drop-shadow(0 0 15px rgb(0, 255, 255));
+}
+
+.shares svg {
+  fill: rgb(0, 255, 0);
+  filter: drop-shadow(0 0 15px rgb(0, 255, 0));
+}
+
+.likes h2 {
+  font-size: 1rem;
+}
+
+.ig-ana-graph {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ig-ana-graph img {
+  width: 80%;
+}
+
+@media only screen and (max-width: 820px) {
+  .ig-ana-stats {
+    width: 100%;
+    gap: 5rem;
+  }
+  .ig-ana-graph img {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 465px) {
+  .instagram-analytic {
+    height: 100vh;
+  }
+  .ig-ana-stats {
+    width: 100%;
+    gap: 2rem;
+  }
+  .ig-ana-stats > * h1 {
+    font-size: 1.5rem;
+  }
+
+  .ig-ana-stats > * h2 {
+    font-size: 0.5rem;
+  }
+}
