@@ -1,0 +1,81 @@
+.banner {
+  height: 40vh;
+  background: url(../../assests/images/Profile/background.png);
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.banner div {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  background-image: url(../../assests/images/Profile/picture.jpg);
+  background-size: cover;
+  border: 10px solid #19161d;
+  position: absolute;
+  bottom: -30%;
+  z-index: 1;
+}
+
+.profile-content {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  padding: 4rem 7rem;
+}
+
+.flex {
+  margin-top: 5rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.flex > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 40%;
+}
+
+.flex div:nth-child(2) {
+  text-align: center;
+
+  justify-content: space-between;
+}
+
+.flex div:nth-child(1) {
+  background-color: #70429f;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+
+.flex div:nth-child(1) > * {
+  margin-bottom: 2rem;
+}
+
+.flex div:nth-child(1) h2 {
+  margin-bottom: 3rem;
+}
+
+@media only screen and (max-width: 950px) {
+  .profile-content {
+    padding: 4rem;
+  }
+  .flex {
+    flex-direction: column;
+    text-align: center;
+  }
+  .flex > * {
+    width: 100%;
+  }
+}
