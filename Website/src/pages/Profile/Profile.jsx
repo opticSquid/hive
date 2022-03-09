@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "../../components/Navbar/navbar";
-import back from "../../assests/images/Profile/background.png";
+
 import graph from "../../assests/images/chart.svg";
 import "./Profile.css";
 
