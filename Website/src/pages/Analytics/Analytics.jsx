@@ -1,4 +1,5 @@
 import { useState } from "react";
+import InstagramAnalytics from "../../components/Instagram/instagramAnalytics";
 import Head from "../../components/Navbar/navbar";
 import YoutubeAnalytics from "../../components/Youtube/youtubeAnalytics";
 
@@ -24,7 +25,7 @@ function Analytics() {
           </select>
         </form>
         <hr />
-        {media === "youtube" ? <YoutubeAnalytics /> : <div></div>}
+        {media === "youtube" ? <YoutubeAnalytics /> : <InstagramAnalytics />}
       </div>
     </div>
   );
