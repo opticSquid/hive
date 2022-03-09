@@ -8,7 +8,7 @@ function InstagramAnalytics() {
   return (
     <div className="instagram-analytic">
       <h1>Your account insights</h1>
-      <div className="ig-ana-stats">
+      <div className="yt-ana-stats">
         <div className="likes">
           <svg
             xmlns="http://www.w3.org/2000/svg"
