@@ -4,23 +4,13 @@
 
 # Hive
 
-![Lines](https://img.shields.io/tokei/lines/github/opticSquid/hive)
 ![Open Issues](https://img.shields.io/github/issues-raw/opticSquid/hive)
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/opticSquid/hive)
 ![license](https://img.shields.io/github/license/opticSquid/hive)
 
 ![stars](https://img.shields.io/github/stars/opticSquid/hive?style=social)
 ![forks](https://img.shields.io/github/forks/opticSquid/hive?style=social)
 
 It is an open source social media management platform for content creators. It brings different social media platforms and services together to create a unified experience for content creators. It brings all the stats of different social media platforms in one place which helps them better understand their audience and make content that matters to them to increase audience engagement and growth of the creator
-
-## The repo is Participating in JWoC (JGEC Winter of Code)
-
-<p align="center">
-<img src="/Assets/jwoc_logo.svg" alt="JWoC Logo" height="500" width="500" style="object-fit:contain;">
-</p>
-
-For more information visit: [JWoC](https://jwoc.tech/).
 
 **For participant's manual visit:** [Mentee's Guide](https://jwoc.tech/docs/student-manual)
 
